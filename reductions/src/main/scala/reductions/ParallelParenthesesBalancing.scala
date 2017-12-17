@@ -70,7 +70,7 @@ object ParallelParenthesesBalancing {
       else {
         val mid = from + (until - from) / 2
         val ((l1, l2), (r1, r2)) = parallel(reduce(from, mid), reduce(mid, until))
-        val a = 0 max (l1 - r2)
+        val a = l1 min r2
         (l1 + r1 - a, l2 + r2 - a)
       }
     }
